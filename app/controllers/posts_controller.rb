@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_headers
+  after_action :set_headers
 
   def index
     @posts = Post.all
