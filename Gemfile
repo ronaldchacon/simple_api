@@ -8,14 +8,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'responders', '~> 2.0'
+gem 'rabl', '~> 0.11.8'
+gem 'oj', '~> 2.14', '>= 2.14.3'
 
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4'
   gem 'factory_girl_rails', '~> 4.5'
+  gem 'faker', '~> 1.6', '>= 1.6.1'
 end
 
 group :development do

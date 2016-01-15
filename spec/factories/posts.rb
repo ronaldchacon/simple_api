@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :post do
-    title "MyString"
-url "MyString"
+    title Faker::Hacker.say_something_smart
+    url Faker::Internet.url
   end
-
 end
