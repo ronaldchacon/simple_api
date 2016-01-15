@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
-
+  skip_before_action :verify_authenticity_token
   def index
     @posts = Post.all
     respond_with @posts
