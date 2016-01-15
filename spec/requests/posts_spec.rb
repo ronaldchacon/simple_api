@@ -10,4 +10,16 @@ RSpec.describe 'Posts', type: :request do
       expect(json.length).to eq(5)
     end
   end
+
+  describe 'GET /posts/:id' do
+    it 'returns a single post' do
+      post = FactoryGirl.create(:post)
+      get "/posts/#{post.id}"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(json['post']['title']).to eq(post.title)
+      expect(json['post']['url']).to eq(post.url)
+    end
+  end
 end
