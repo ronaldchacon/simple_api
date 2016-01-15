@@ -13,6 +13,7 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'responders', '~> 2.0'
 gem 'rabl', '~> 0.11.8'
 gem 'oj', '~> 2.14', '>= 2.14.3'
+gem 'rack-cors', '~> 0.4.0'
 
 group :development, :test do
   gem 'byebug'
