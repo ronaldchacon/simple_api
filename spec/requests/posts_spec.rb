@@ -22,4 +22,15 @@ RSpec.describe 'Posts', type: :request do
       expect(json['post']['url']).to eq(post.url)
     end
   end
+
+  describe 'POST /posts' do
+    it 'creates a post' do
+      headers = { 'ACCEPT' => 'application/json' }
+
+      post '/posts', { post: { title: 'Test', url: 'http://example.com' } }, headers
+
+      expect(response.content_type).to eq('application/json')
+      expect(response).to have_http_status(:created)
+    end
+  end
 end

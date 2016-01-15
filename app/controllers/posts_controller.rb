@@ -9,6 +9,10 @@ class PostsController < ApplicationController
     respond_with @post
   end
 
+  def create
+    respond_with Post.create(post_params)
+  end
+
   private
 
   def post_params

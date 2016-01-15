@@ -1,0 +1,32 @@
+<form action="/posts" method="post" id="new_post">
+  <input type="text" name="post[title]" placeholder="Title">
+  <br><br>
+  <input type="text" name="post[url]" placeholder="URL">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  $('#new_post').on('submit', function(event) {
+    event.preventDefault();
+    var formData = $(this).serialize();
+
+    $.ajax({
+      url: '/posts',
+      type: 'POST',
+      dataType: 'JSON',
+      data: formData
+    })
+    .done(function(response) {
+      console.log("success");
+      console.log(response);
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+
+  });
+</script>
