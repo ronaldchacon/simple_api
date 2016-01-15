@@ -1,5 +1,7 @@
 # Simple API
 
+root url: https://rcsimpleapi.herokuapp.com/
+
 #### GET /posts
 returns all posts
 
