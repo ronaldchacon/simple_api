@@ -26,6 +26,7 @@
     })
     .always(function() {
       console.log("complete");
+      $('#new_post').trigger("reset");
     });
 
   });
